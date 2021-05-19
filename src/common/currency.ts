@@ -15,3 +15,9 @@ export const currencyOptions = [
     {image: GBP, text: Currency.GBP, value: Currency.GBP},
     {image: AUD, text: Currency.AUD, value: Currency.AUD}
 ]
+
+export const fees = {
+    USD : 3.69,
+    GBP : 1.45,
+    AUD : 2.34
+}

@@ -36,7 +36,7 @@ const Stepper:React.FC<StepperProps> = ({steps, activeIndex, completed }) => {
                         }
                         let color = activeIndex === index ? 'text-dark-gray' : 'text-sleek-gray'
                         color = index < activeIndex ? 'text-sharp-indigo' : color
-                        return <span className={`text-xs sm:text-sm md:text-md ${color} relative top-0 font-normal`} style={style}>
+                        return <span key={index} className={`text-xs sm:text-sm md:text-md ${color} relative top-0 font-normal`} style={style}>
                             <span className='absolute px-4' style={{left: '-30px'}}>{step}</span>
                         </span>
                     })
