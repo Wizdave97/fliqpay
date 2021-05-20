@@ -26,7 +26,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Assumptions
 
-There was no checkout page in the designs so I took the liberty of adding one
+There was no checkout page in the designs so I took the liberty of adding one  
 The Fixer API free tier which is used in the assessment only allows fetching  
 rates for the Euro currency, hence the reason why the user  is limited to converting  
 from Euro only.
