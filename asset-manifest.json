@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/fliqpay/static/css/main.71b99f52.chunk.css",
-    "main.js": "/fliqpay/static/js/main.1d91175c.chunk.js",
-    "main.js.map": "/fliqpay/static/js/main.1d91175c.chunk.js.map",
+    "main.js": "/fliqpay/static/js/main.77068cfd.chunk.js",
+    "main.js.map": "/fliqpay/static/js/main.77068cfd.chunk.js.map",
     "runtime-main.js": "/fliqpay/static/js/runtime-main.c73c8fe2.js",
     "runtime-main.js.map": "/fliqpay/static/js/runtime-main.c73c8fe2.js.map",
     "static/js/2.e4ffdad3.chunk.js": "/fliqpay/static/js/2.e4ffdad3.chunk.js",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.c73c8fe2.js",
     "static/js/2.e4ffdad3.chunk.js",
     "static/css/main.71b99f52.chunk.css",
-    "static/js/main.1d91175c.chunk.js"
+    "static/js/main.77068cfd.chunk.js"
   ]
 }
