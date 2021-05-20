@@ -9,9 +9,10 @@ interface ButtonProps {
     label: string;
     onClick: () => void;
     disabled?: boolean;
+    fillColor?: string;
 }
-const Button: React.FC<ButtonProps> = ({ variant, label, onClick, disabled = false }) => {
-    const color = variant === Variant.fill ? 'bg-sharp-indigo text-white' : 'bg-white text-sharp-indigo border border-sharp-indigo'
+const Button: React.FC<ButtonProps> = ({ variant, label, onClick, disabled = false, fillColor = 'bg-sharp-indigo' }) => {
+    const color = variant === Variant.fill ? `${fillColor} bg-sharp-indigo text-white` : 'bg-white text-sharp-indigo border border-sharp-indigo'
     const disabledStyle = disabled ? 'opacity-60' : ''
     return (
         <span

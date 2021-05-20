@@ -10,6 +10,13 @@ module.exports = {
       '3/4': '75%',
       'full': '100%',
     },
+    maxWidth: {
+      '0': '0',
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
+      'full': '100%',
+    },
     extend: {
       colors: {
         'dark-gray': '#636166',
@@ -22,7 +29,9 @@ module.exports = {
         'ceramic-gray':'#F2F2F2',
         'sharp-gray': '#8B8F96',
         'blueish-gray': '#F4F3F8',
-        'washed-gray':'#C4C5C6'
+        'washed-gray':'#C4C5C6',
+        'bright-green': '#6FAE75',
+        'contrasty-gray':'#404040'
       },
       width: {
         '508': '508px',
