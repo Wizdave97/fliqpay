@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react"
 import { Currency } from "../common/currency"
+const NODE_ENV = process.env.NODE_ENV
 const API_KEY = '1c0b8b07e56db22c656666e2c174ea54'
-const baseURL = `https://data.fixer.io/api/latest?access_key=${API_KEY}`
+const baseURL = NODE_ENV === 'production' ? `https://data.fixer.io/api/latest?access_key=${API_KEY}` : `http://data.fixer.io/api/latest?access_key=${API_KEY}`
 const currencies = Object.values(Currency)
 
 export const useFixer = (baseCurrency: string) => {
