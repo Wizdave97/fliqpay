@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/fliqpay/static/css/main.71b99f52.chunk.css",
+    "main.js": "/fliqpay/static/js/main.1d91175c.chunk.js",
+    "main.js.map": "/fliqpay/static/js/main.1d91175c.chunk.js.map",
+    "runtime-main.js": "/fliqpay/static/js/runtime-main.c73c8fe2.js",
+    "runtime-main.js.map": "/fliqpay/static/js/runtime-main.c73c8fe2.js.map",
+    "static/js/2.e4ffdad3.chunk.js": "/fliqpay/static/js/2.e4ffdad3.chunk.js",
+    "static/js/2.e4ffdad3.chunk.js.map": "/fliqpay/static/js/2.e4ffdad3.chunk.js.map",
+    "static/js/3.86496045.chunk.js": "/fliqpay/static/js/3.86496045.chunk.js",
+    "static/js/3.86496045.chunk.js.map": "/fliqpay/static/js/3.86496045.chunk.js.map",
+    "index.html": "/fliqpay/index.html",
+    "static/css/main.71b99f52.chunk.css.map": "/fliqpay/static/css/main.71b99f52.chunk.css.map",
+    "static/js/2.e4ffdad3.chunk.js.LICENSE.txt": "/fliqpay/static/js/2.e4ffdad3.chunk.js.LICENSE.txt",
+    "static/media/aud.10f47fac.png": "/fliqpay/static/media/aud.10f47fac.png",
+    "static/media/caret.9a23dcae.svg": "/fliqpay/static/media/caret.9a23dcae.svg",
+    "static/media/close.d6994e24.svg": "/fliqpay/static/media/close.d6994e24.svg",
+    "static/media/eq.2559c76b.svg": "/fliqpay/static/media/eq.2559c76b.svg",
+    "static/media/eu.82531138.png": "/fliqpay/static/media/eu.82531138.png",
+    "static/media/gbp.320bf846.png": "/fliqpay/static/media/gbp.320bf846.png",
+    "static/media/logo.13b0d137.svg": "/fliqpay/static/media/logo.13b0d137.svg",
+    "static/media/minus.fb18a807.svg": "/fliqpay/static/media/minus.fb18a807.svg",
+    "static/media/mul.d91dab21.svg": "/fliqpay/static/media/mul.d91dab21.svg",
+    "static/media/usa.bdcaa975.png": "/fliqpay/static/media/usa.bdcaa975.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c73c8fe2.js",
+    "static/js/2.e4ffdad3.chunk.js",
+    "static/css/main.71b99f52.chunk.css",
+    "static/js/main.1d91175c.chunk.js"
+  ]
+}
