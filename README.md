@@ -32,4 +32,13 @@ rates for the Euro currency, hence the reason why the user  is limited to conver
 from Euro only.
 
 
+## Issues
+
+The free tier of the fixer API does not support https requests so it cannot be fetched on the deploy build  
+as the deploy build is hosted on a https connection
+ 
+To test the application completely, you'll need to run it locally
+
+
+
 
