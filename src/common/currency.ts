@@ -17,7 +17,5 @@ export const currencyOptions = [
 ]
 
 export const fees = {
-    USD : 3.69,
-    GBP : 1.45,
-    AUD : 2.34
+    EUR : 3.69
 }

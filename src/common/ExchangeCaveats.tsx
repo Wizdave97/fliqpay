@@ -25,7 +25,7 @@ const ExchangeCaveats: React.FC<ExchangeCaveatsProps> = ({rate, fee, amount, cur
                 <div className='w-20p h-20p z-10'>
                     <img src={Eq} className='w-full h-full' alt=''/>
                 </div>
-                <span className='mx-4 w-24 font-medium capitalize'>{amount} {currency}</span>
+                <span className='mx-4 min-w-24 font-medium capitalize'>{new Intl.NumberFormat().format(+amount.toFixed(2))} {currency}</span>
                 <span className=''>Amount we'll convert</span>
             </div>
             <div className='flex flex-row text-sharp-gray hover:text-header-blue cursor-pointer'>

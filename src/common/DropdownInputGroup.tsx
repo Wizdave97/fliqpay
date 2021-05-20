@@ -1,7 +1,6 @@
 import React, { RefObject, useEffect, useMemo, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 import Caret from '../assets/caret.svg'
-import { currencyOptions } from './currency'
 import { find } from 'lodash'
 import { useOnClickOutside } from '../hooks/useOnClickOutside'
 
@@ -10,6 +9,7 @@ interface DropdownProps {
     options: { text: string, image: string, value: string }[];
     value?: string;
     onChange: (value: string) => void;
+    disabled: boolean;
 }
 
 interface DropdownInputGroupProps {
@@ -19,7 +19,9 @@ interface DropdownInputGroupProps {
     onChangeInput: (value: string) => void;
     onChange: (value: string) => void;
     disabled?: boolean;
+    disableDropdown: boolean;
     options: { text: string, image: string, value: string }[];
+    inputType? :string
 
 
 }
@@ -36,7 +38,7 @@ const Portal: React.FC<PortalProps> = ({open, mountNode = document.body, childre
     return ReactDOM.createPortal(children, mountNode)
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange, disabled }) => {
     const selected = useMemo(() => find(options, (o) => o.value === value), [value, options] )
     const handleRef = useRef<HTMLDivElement | null>(null)
     const listRef = useRef<HTMLDivElement | null>(null)
@@ -55,7 +57,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange }) => {
     return (
         <div ref={handleRef} onClick={(e) => {
             e.stopPropagation()
-            !open && setOpen(true)
+            !open && !disabled && setOpen(true)
             }} className={`bg-blueish-gray w-full h-full py-2 px-4 flex flex-row items-center cursor-pointer relative ${selected ? 'justify-center' : 'justify-end'}`}>
             {selected &&
                 <>
@@ -85,17 +87,18 @@ const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange }) => {
     )
 }
 
-const DropdownInputGroup: React.FC<DropdownInputGroupProps> = ({ label, dropdownValue, inputValue, onChange, onChangeInput, disabled, options }) => {
+const DropdownInputGroup: React.FC<DropdownInputGroupProps> = ({ label, dropdownValue, inputValue, onChange, onChangeInput, disabled, options, disableDropdown, inputType = 'number' }) => {
     return (
         <div className='w-full border border-ceramic-gray rounded-md p-0 m-0 flex flex-row'>
             <label className='w-3/5 flex flex-col py-2 px-4'>
                 <span className='text-sharp-gray mb-1'>{label}</span>
-                <input disabled={disabled} className='outline-hidden bg-transparent text-header-blue text-lg' value={inputValue} onChange={(e) => {
+                <input type={inputType} disabled={disabled} className='outline-hidden appearance-none bg-transparent text-header-blue text-lg' value={inputValue} onChange={(e) => {
                     e.persist()
+                    if(e.target.value.length > 7) return
                     onChangeInput(e.target.value)
                 }} />
             </label>
-            <div className='w-2/5 h-full'><Dropdown options={options} value={dropdownValue} onChange={onChange} /></div>
+            <div className='w-2/5 h-full'><Dropdown disabled={disableDropdown} options={options} value={dropdownValue} onChange={onChange} /></div>
         </div>
     )
 }

@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import Logo from '../assets/logo.svg'
 import Close from '../assets/close.svg'
 import Stepper from '../common/Stepper'
-import PayoutForm from './PayoutForm'
+import PayoutForm, { PayOutDataProps } from './PayoutForm'
+import RecipientForm from './RecipientForm'
+
 
 const steps = ['Amount', 'Recipient', 'Review', 'Pay']
 
 const Main = () => {
     const [activeIndex, setActiveIndex] = useState(0)
     const [completed, setCompleted] = useState(false)
+    const [payoutData, setPayoutData] = useState<PayOutDataProps>({currencyInput: '', currencyOutput: '', inputAmount: '', convertedAmount: ''})
     return (
         <div className='w-full h-full bg-white m-0 p-0'>
             <div role='navigation' className='bg-white shadow-md h-24 w-full px-2 py-3 md:px-16 lg:px-48 xl:px-64 flex flex-row items-center justify-between'>
@@ -24,7 +27,11 @@ const Main = () => {
                 </div>
             </div>
             <div className='my-6 w-full px-2 py-3 md:px-16 lg:px-48 xl:px-64 flex justify-center'>
-                <PayoutForm onCompare={() => {}} onCompleted={() => setActiveIndex(activeIndex + 1)}/>
+                {activeIndex === 0 && <PayoutForm initData={payoutData} onCompare={() => {}} onCompleted={(data: PayOutDataProps) => {
+                    setPayoutData(data)
+                    setActiveIndex(activeIndex + 1)
+                    }}/>}
+                {activeIndex === 1 && <RecipientForm/>}
             </div>
         </div>
     )
