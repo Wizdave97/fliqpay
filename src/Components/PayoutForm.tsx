@@ -56,7 +56,7 @@ const PayoutForm: React.FC<PayoutFormProps> = ({ onCompleted, initData }) => {
                         onClick={() => onCompleted({ currencyInput, currencyOutput, inputAmount, convertedAmount, fees: fees[currencyInput as keyof typeof fees].toString(), rate: data?.[currencyOutput as keyof typeof data]! })} />
                 </div>
             </div>
-            <ReactModal ariaHideApp={false} isOpen={compare}  onRequestClose={() => setCompare(false)} className='w-full absolute top-1/4 left-1/4 z-20 md:w-1/2 py-12 px-8 outline-hidden bg-white border-0 shadow-md'>
+            <ReactModal ariaHideApp={false} isOpen={compare} style={{overlay: {zIndex: 40}}}  onRequestClose={() => setCompare(false)} className='w-full absolute top-1/4 left-1/4 md:w-1/2 py-12 px-8 outline-hidden bg-white border-0 shadow-md'>
                 <div className='w-full flex flex-col bg-white'>
                     <h1 className='w-full text-header-blue text-lg mb-1 text-center'>Compare rates of top merchants</h1>
                     <div className='w-full p-4 grid grid-cols-4 my-2 gap-4 place-content-center'>
