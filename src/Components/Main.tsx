@@ -13,7 +13,6 @@ const steps = ['Amount', 'Recipient', 'Review', 'Pay']
 
 const Main = () => {
     const [activeIndex, setActiveIndex] = useState(0)
-    const [completed, setCompleted] = useState(false)
     const [payoutData, setPayoutData] = useState<PayOutDataProps>({ currencyInput: Currency.EUR, currencyOutput: '', inputAmount: '', convertedAmount: '', fees: '', rate: '' })
     const [recipientData, setRecipientData] = useState<RecipientFormData & { region: Region}>({ swift: '', fullName: '', email: '', iban: '', region: Region.EUROPE })
 
@@ -23,7 +22,7 @@ const Main = () => {
                 <div className='w-20 h-full mr-4 flex items-center'>
                     <img src={Logo} alt='Fliq pay' className='w-full' />
                 </div>
-                <Stepper activeIndex={activeIndex} steps={steps} completed={completed} />
+                <Stepper activeIndex={activeIndex} steps={steps}/>
                 <div className='w-4 h-full ml-4 flex items-center' role='button' onClick={() => {
                     if (activeIndex === 0) return
                     setActiveIndex(activeIndex - 1)
@@ -45,9 +44,7 @@ const Main = () => {
                     activeIndex === 2 && <ReviewForm payoutData={payoutData} recipientData={recipientData} onCompleted={() => setActiveIndex(activeIndex + 1)} />
                 }
                 {
-                    activeIndex === 3 && <Checkout onCompleted={(data) => {
-                        setCompleted(true)
-                    }}/> 
+                    activeIndex === 3 && <Checkout onCompleted={() => {}}/> 
                 }
             </div>
         </div>

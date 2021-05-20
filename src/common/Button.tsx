@@ -12,7 +12,7 @@ interface ButtonProps {
     fillColor?: string;
 }
 const Button: React.FC<ButtonProps> = ({ variant, label, onClick, disabled = false, fillColor = 'bg-sharp-indigo' }) => {
-    const color = variant === Variant.fill ? `${fillColor} bg-sharp-indigo text-white` : 'bg-white text-sharp-indigo border border-sharp-indigo'
+    const color = variant === Variant.fill ? `${fillColor}  text-white` : 'bg-white text-sharp-indigo border border-sharp-indigo'
     const disabledStyle = disabled ? 'opacity-60' : ''
     return (
         <span

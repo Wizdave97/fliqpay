@@ -55,7 +55,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange, disabled 
         }
     }, [open])
     return (
-        <div ref={handleRef} onClick={(e) => {
+        <div ref={handleRef} data-testid='dropdown-handle' onClick={(e) => {
             e.stopPropagation()
             !open && !disabled && setOpen(true)
             }} className={`bg-blueish-gray w-full h-full py-2 px-4 flex flex-row items-center cursor-pointer relative ${selected ? 'justify-center' : 'justify-end'}`}>
@@ -92,7 +92,7 @@ const DropdownInputGroup: React.FC<DropdownInputGroupProps> = ({ label, dropdown
         <div className='w-full border border-ceramic-gray rounded-md p-0 m-0 flex flex-row'>
             <label className='w-3/5 flex flex-col py-2 px-4'>
                 <span className='text-sharp-gray mb-1'>{label}</span>
-                <input type={inputType} disabled={disabled} className='outline-hidden appearance-none bg-transparent text-header-blue text-lg' value={inputValue} onChange={(e) => {
+                <input data-testid='dropdown-input' type={inputType} disabled={disabled} className='outline-hidden appearance-none bg-transparent text-header-blue text-lg' value={inputValue} onChange={(e) => {
                     e.persist()
                     if(e.target.value.length > 7) return
                     onChangeInput(e.target.value)

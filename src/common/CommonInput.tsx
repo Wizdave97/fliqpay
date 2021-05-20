@@ -14,7 +14,7 @@ const CommonInput: React.FC<CommonInputProps> = ({ label, placeholder, onChange,
         <div className='w-full p-0 m-0'>
             <label className='w-full h-full flex flex-col p-0 m-0'>
                 <span className='text-sm text-sleek-gray mb-1'>{label}</span>
-                <input type={type} value={value} className='text-header-blue w-full py-2 px-3 border border-ceramic-gray rounded-sm outline-hidden placeholder-washed-gray' 
+                <input data-testid='common-input' type={type} value={value} className='text-header-blue w-full py-2 px-3 border border-ceramic-gray rounded-sm outline-hidden placeholder-washed-gray' 
                 placeholder={placeholder}
                 onChange={(e) => {
                     e.persist()

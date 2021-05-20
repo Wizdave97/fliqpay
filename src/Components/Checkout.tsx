@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import ReactModal from 'react-modal'
 import Button, { Variant } from '../common/Button'
 import CommonInput from '../common/CommonInput'
 
@@ -13,6 +14,7 @@ interface CheckoutProps {
     onCompleted: (data: CheckoutFormData) => void;
 }
 const Checkout: React.FC<CheckoutProps> = ({ onCompleted }) => {
+    const [openModal, setOpenModal] = useState(false)
     const [state, setState] = useState<CheckoutFormData>({ cardNumber: '', cvv: '', expDate: '', expYear: '' })
     const [errors, setErrors] = useState<CheckoutFormData>({ cardNumber: '', cvv: '', expDate: '', expYear: '' })
     const { cardNumber, cvv, expDate, expYear } = state
@@ -62,8 +64,10 @@ const Checkout: React.FC<CheckoutProps> = ({ onCompleted }) => {
         })
         if(Object.values(errors).length) return
         onCompleted(state)
+        setOpenModal(true)
     }, [state, handleValidation, onCompleted])
     return (
+        <>
         <div className='rounded-md border bg-white border-ceramic-gray p-8 w-full md:w-508 flex flex-col'>
             <h1 className='w-full text-header-blue text-lg mb-1'>Your Card Details</h1>
             <h2 className='w-full text-subheader-gray text-sm'>Only mastercards are accepted</h2>
@@ -80,6 +84,15 @@ const Checkout: React.FC<CheckoutProps> = ({ onCompleted }) => {
 
             <Button variant={Variant.fill} fillColor='bg-bright-green' label='Complete transaction' onClick={handleFormCompletion} />
         </div>
+        <ReactModal ariaHideApp={false} isOpen={openModal} style={{overlay: {zIndex: 40}}}  onRequestClose={() => setOpenModal(false)} className='w-full absolute top-1/4 left-0 md:left-1/4 md:w-1/2 py-12 px-8 outline-hidden bg-white border-0 shadow-md'>
+        <div className='w-full flex flex-col bg-white'>
+            <h1 className='w-full text-header-blue text-lg mb-1 text-center'>Notification</h1>
+            <div className='w-full p-8 flex items-center justify-center'>
+                <div className='text-lg text-contrasty-gray mx-2'>Congratulations, the transaction was successful</div>
+            </div>
+        </div>
+    </ReactModal>
+    </>
     )
 }
 
